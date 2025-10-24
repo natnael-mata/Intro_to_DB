@@ -17,22 +17,22 @@ CREATE TABLE Authors (
 );
 
 CREATE TABLE Customers(
- customer_id PRIMARY KEY,
+ customer_id INT PRIMARY KEY,
  customer_name VARCHAR(215),
  email VARCHAR(215),
  address TEXT
 );
 
 CREATE TABLE Orders(
- order_id PRIMARY KEY,
- customer_id (FOREIGN KEY REFERENCES Customers TABLE),
+ order_id INT PRIMARY KEY,
+ customer_id INT (FOREIGN KEY REFERENCES Customers TABLE),
  order_date DATE
 );
 
 CREATE TABLE Order_Details
 (
 orderdetailid (Primary Key),
-order_id (FOREIGN KEY REFERENCES Orders TABLE),
-book_id (FOREIGN KEY REFERENCES Books TABLE),
+order_id INT (FOREIGN KEY REFERENCES Orders TABLE),
+book_id INT (FOREIGN KEY REFERENCES Books TABLE),
 quantity DOUBLE
 );
