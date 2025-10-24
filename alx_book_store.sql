@@ -33,6 +33,8 @@ CREATE TABLE Orders (
   FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
 
+
+
 CREATE TABLE Order_Details
 (
 orderdetailid (Primary Key),
