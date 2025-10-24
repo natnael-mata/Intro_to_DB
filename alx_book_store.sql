@@ -23,10 +23,14 @@ CREATE TABLE Customers(
  address TEXT
 );
 
-CREATE TABLE Orders(
- order_id INT PRIMARY KEY,
- customer_id INT (FOREIGN KEY REFERENCES Customers TABLE),
- order_date DATE
+CREATE TABLE Orders (
+  order_id INT PRIMARY KEY AUTO_INCREMENT,
+  customer_id INT,
+  book_id INT,
+  order_date DATE,
+  quantity INT,
+  FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
+  FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
 
 CREATE TABLE Order_Details
